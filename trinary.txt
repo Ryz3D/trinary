@@ -1,0 +1,46 @@
+8-trit adder pcb -> edge/jst/90°-jumper connector (incl. tri-state output?)
+
+    and          or          xor
+00  0            0           0
+01  0            1           1
+10  0            1           1
+11  1            1           0
+
+    and ("min")  or ("max")  xor (max-min, "delta")
+00  0            0           0
+01  0            1           1
+02  0            2           2
+10  0            1           1
+11  1            1           0
+12  1            2           1
+20  0            2           2
+21  1            2           1
+22  2            2           0
+
+     00 01 02 10 11 12 20 21 22
+min  0  0  0  0  1  1  0  1  2
+nmin 2  2  2  2  1  1  2  1  0
+max  0  1  2  1  1  2  2  2  2
+nmax 2  1  0  1  1  0  0  0  0
+dta  0  1  2  1  0  1  2  1  0
+ndta 2  1  0  1  2  1  0  1  2
+
+    not ("inv")
+0   2
+1   1
+2   0
+
+    sel0
+0   2
+1   0
+2   0
+
+    sel1
+0   0
+1   2
+2   0
+
+    sel2
+0   0
+1   0
+2   2
